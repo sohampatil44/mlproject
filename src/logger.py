@@ -9,11 +9,13 @@ os.makedirs(logs_path,exist_ok=True)
 LOG_FILE_PATH=os.path.join(logs_path,LOG_FILE)
 
 logging.basicConfig(
-   filename=LOG_FILE_PATH,
-   format="[ %(asctime)s ] %(lineno)d %(levelname)s - %(message)s",
-   level=logging.INFO,
+    filename=LOG_FILE_PATH,
+    format="[ %(asctime)s ] %(lineno)d %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
 
 
 )
-
-
+if __name__ == "__main__":
+    logging.info("Logging initialized")
+# Debug statement to confirm logger setup
+#print(f"Logging initialized. Log file at: {LOG_FILE_PATH}")
